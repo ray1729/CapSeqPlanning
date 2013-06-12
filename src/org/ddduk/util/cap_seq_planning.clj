@@ -66,7 +66,7 @@
   "The partition of plates into set is valid if it requires no more
   than the available Tecan slots."
   [dna-plate-sets]
-  (every? #(<= (tecan-slots %) *tecan-capacity*) dna-plate-sets))
+  (every? #(<= (tecan-slots %) tecan-capacity) dna-plate-sets))
 
 (defn num-empty-wells
   "Calculate the number of empty PCR wells for a given set of DNA plates."
