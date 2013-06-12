@@ -45,9 +45,9 @@
   "Return all partitions of the set `s` into a partition of `n1`
   elements, a partition of `n2` elements, and the remainder."
   [s n1 n2]
-  (for [exp1-dna-plates (map set (combinations dna-plates n1))
-        exp2-dna-plates (map set (combinations (set/difference dna-plates exp1-dna-plates) n2))
-        :let [exp3-dna-plates (set/difference dna-plates exp1-dna-plates exp2-dna-plates)]]
+  (for [exp1-dna-plates (map set (combinations s n1))
+        exp2-dna-plates (map set (combinations (set/difference s exp1-dna-plates) n2))
+        :let [exp3-dna-plates (set/difference s exp1-dna-plates exp2-dna-plates)]]
     [exp1-dna-plates exp2-dna-plates exp3-dna-plates]))
 
 (defn num-pcr-plates
